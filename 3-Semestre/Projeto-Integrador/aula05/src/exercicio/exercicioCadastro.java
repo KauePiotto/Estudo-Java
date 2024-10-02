@@ -10,11 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class tela1 extends JFrame implements ActionListener {
+public class exercicioCadastro extends JFrame implements ActionListener {
 	JLabel CPF;
 	JTextField txtCPF;
 
-	public tela1() {
+	public exercicioCadastro() {
 		// Titulo da janela
 		setTitle("Cadastro");
 		// Tamanho da janela
@@ -82,7 +82,7 @@ public class tela1 extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		new tela1();
+		new exercicioCadastro();
 	}
 
 	@Override

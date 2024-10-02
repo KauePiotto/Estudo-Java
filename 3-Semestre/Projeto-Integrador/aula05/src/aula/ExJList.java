@@ -73,7 +73,7 @@ public class ExJList extends JFrame implements ListSelectionListener, ActionList
 	private JButton criarBotao(String texto) {
 		JButton botao = new JButton(texto);
 		botao.addActionListener(this);
-		botao.setFont(new Font("Courier new", Font.BOLD, 18));
+		botao.setFont(new Font("Arial", Font.BOLD, 18));
 		botao.setForeground(Color.BLUE);
 		add(botao);
 		return botao;
