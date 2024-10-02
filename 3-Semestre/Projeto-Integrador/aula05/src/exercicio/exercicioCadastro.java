@@ -6,15 +6,24 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class exercicioCadastro extends JFrame implements ActionListener {
-	JLabel CPF;
-	JTextField txtCPF;
+public class exercicioCadastro extends JFrame implements ActionListener, ItemListener {
+	JLabel CPF, RG, Nome, Logradouro, Endereco;
+	JTextField txtCPF, txtRG, txtNome, txtEndereco;
+	JComboBox combo;
 
-	public exercicioCadastro() {
+	public static void main(String[] args) {
+		new exercicioCadastro();
+	}
+
+	private exercicioCadastro() {
 		// Titulo da janela
 		setTitle("Cadastro");
 		// Tamanho da janela
@@ -26,16 +35,29 @@ public class exercicioCadastro extends JFrame implements ActionListener {
 		// Comando para centralizar a janela
 		Centralizar();
 		// Label do CPF
-		CPF = CriarLabel("CPF", 10, 10, 270, 50);
-		// Text Field do CPF
-		txtCPF = txtCPF(10, 50, 300, 35);
+		CPF = lblCPF("CPF", 10, 10, 270, 50);
+		// TextField do CPF
+		txtCPF = txtCPF(10, 50, 150, 35);
+		// Label do RG
+		RG = lblRG("RG", 200, 10, 270, 50);
+		// TextField do RG
+		txtRG = txtRG(200, 50, 150, 35);
+		// Label do Nome
+		Nome = lblNome("Nome", 10, 100, 270, 50);
+		// JTextField do Nome
+		txtNome = txtNome(10, 150, 450, 35);
+		// JLabel do Lagradouro
+		Logradouro = lblLograduro("Logradouro", 10, 190, 270, 50);
+		// ComboBox do Lagradouro
+		String[] logr = { "Alameda", "Avenida", "Praça", "Rodovia", "Rua", "Viela" };
+		combo = Combo(logr, 10, 240, 180, 35);
 		// Exibindo Janela
 		setVisible(true);
 		// Provoca o termino da execução (encerra o programa)
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public void Centralizar() {
+	private void Centralizar() {
 		// Obtém a alturar e largura da resolusão vídeo
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -52,7 +74,8 @@ public class exercicioCadastro extends JFrame implements ActionListener {
 		setLocation((screen.width - janela.width) / 2, (screen.height - janela.width) / 2);
 	}
 
-	public JLabel CriarLabel(String string, int desq, int dtop, int larg, int alt) {
+	// Criando o Campo Para Adicionar CPF
+	private JLabel lblCPF(String string, int desq, int dtop, int larg, int alt) {
 		JLabel jl = new JLabel(string);
 
 		// distancia esq e topo
@@ -62,14 +85,14 @@ public class exercicioCadastro extends JFrame implements ActionListener {
 		// Cor da Fonte
 		jl.setForeground(new Color(0, 0, 0));
 		// nome,estilo e tamanho da fonte
-		jl.setFont(new Font("Courier new", Font.BOLD, 12));
+		jl.setFont(new Font("Courier new", Font.BOLD, 18));
 		// Inserir o Jlabel na Janela
 		add(jl);
 
 		return jl;
 	}
 
-	public JTextField txtCPF(int desq, int dtop, int larg, int alt) {
+	private JTextField txtCPF(int desq, int dtop, int larg, int alt) {
 		JTextField txtCpf = new JTextField();
 
 		txtCpf.setBounds(desq, dtop, larg, alt);
@@ -81,12 +104,102 @@ public class exercicioCadastro extends JFrame implements ActionListener {
 		return txtCpf;
 	}
 
-	public static void main(String[] args) {
-		new exercicioCadastro();
+	// Criando Campo para Adiconar RG
+	private JLabel lblRG(String string, int desq, int dtop, int larg, int alt) {
+		JLabel lblRG = new JLabel(string);
+
+		// Distancia esq e top
+		lblRG.setLocation(desq, dtop);
+		// larg e alt do rotulo
+		lblRG.setSize(larg, alt);
+		// Cor da fonte
+		lblRG.setForeground(new Color(0, 0, 0));
+		// Nome, estilo e tamanho da fonte
+		lblRG.setFont(new Font("Courier new", Font.BOLD, 18));
+		// Inserir o JLabel na Janela
+		add(lblRG);
+
+		return lblRG;
+	}
+
+	private JTextField txtRG(int desq, int dtop, int larg, int alt) {
+		JTextField txtRG = new JTextField();
+
+		txtRG.setBounds(desq, dtop, larg, alt);
+		// Caixa de Texto
+		txtRG.setHorizontalAlignment(JTextField.LEFT);
+		// Inserir o JtextField na janela
+		add(txtRG);
+
+		return txtRG;
+	}
+
+	// Criando o campo para Adicionar Nome
+	private JLabel lblNome(String string, int desq, int dtop, int larg, int alt) {
+		JLabel lblNome = new JLabel(string);
+
+		// Distancia esq e top
+		lblNome.setLocation(desq, dtop);
+		// Larg e alt do rotulo
+		lblNome.setSize(larg, alt);
+		// Cor da Fonte
+		lblNome.setForeground(new Color(0, 0, 0));
+		// nome, estilo e tamanho da fonte
+		lblNome.setFont(new Font("Courier new", Font.BOLD, 18));
+		// Inserir o JLabel na Janela
+		add(lblNome);
+
+		return lblNome;
+	}
+
+	private JTextField txtNome(int desq, int dtop, int larg, int alt) {
+		JTextField txtNome = new JTextField();
+
+		txtNome.setBounds(desq, dtop, larg, alt);
+		// Caixa de texto
+		txtNome.setHorizontalAlignment(JTextField.LEFT);
+		// Inserir o JTextField na janela
+		add(txtNome);
+
+		return txtNome;
+	}
+
+	// Criando o campo de Lograduro
+	private JLabel lblLograduro(String string, int desq, int dtop, int larg, int alt) {
+		JLabel lblLogradouro = new JLabel(string);
+
+		// Distancia esq e top
+		lblLogradouro.setLocation(desq, dtop);
+		// Larg e alt do rotulo
+		lblLogradouro.setSize(larg, alt);
+		// Cor da Fonte
+		lblLogradouro.setForeground(new Color(0, 0, 0));
+		// nome, estilo e tamanho da fonte
+		lblLogradouro.setFont(new Font("Courier new", Font.BOLD, 18));
+		// Inserir o JLabel na Janela
+		add(lblLogradouro);
+
+		return lblLogradouro;
+	}
+
+	private JComboBox Combo(String[] cores, int desq, int dtop, int larg, int alt) {
+		JComboBox combo = new JComboBox(cores);
+		combo.addItemListener(this);
+		combo.setFont(new Font("Arial", Font.BOLD, 15));
+		combo.setBounds(desq, dtop, larg, alt);
+		add(combo);
+
+		return combo;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent e) {
 		// TODO Auto-generated method stub
 
 	}
