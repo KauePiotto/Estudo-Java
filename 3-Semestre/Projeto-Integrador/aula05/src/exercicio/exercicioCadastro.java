@@ -45,12 +45,16 @@ public class exercicioCadastro extends JFrame implements ActionListener, ItemLis
 		// Label do Nome
 		Nome = lblNome("Nome", 10, 100, 270, 50);
 		// JTextField do Nome
-		txtNome = txtNome(10, 150, 450, 35);
+		txtNome = txtNome(10, 200, 150, 35);
 		// JLabel do Lagradouro
 		Logradouro = lblLograduro("Logradouro", 10, 190, 270, 50);
 		// ComboBox do Lagradouro
 		String[] logr = { "Alameda", "Avenida", "Praça", "Rodovia", "Rua", "Viela" };
-		combo = Combo(logr, 10, 240, 180, 35);
+		combo = Combo(logr, 10, 235, 180, 40);
+		// JLabel do Endereco
+		Endereco = lblendereco("Endereço", 200, 190, 270, 53);
+		// JTextField do Endereço
+		txtEndereco = txtendereco(200, 235, 300, 40);
 		// Exibindo Janela
 		setVisible(true);
 		// Provoca o termino da execução (encerra o programa)
@@ -190,6 +194,36 @@ public class exercicioCadastro extends JFrame implements ActionListener, ItemLis
 		add(combo);
 
 		return combo;
+	}
+
+	// Criando o Campo Endereço
+	private JLabel lblendereco(String string, int desq, int dtop, int larg, int alt) {
+		JLabel lblendereco = new JLabel(string);
+
+		// Distancia esq e top
+		lblendereco.setLocation(desq, dtop);
+		// Larg e alt do rotulo
+		lblendereco.setSize(larg, alt);
+		// Cor da Fonte
+		lblendereco.setForeground(new Color(0, 0, 0));
+		// nome, estilo e tamanho da fonte
+		lblendereco.setFont(new Font("Courier new", Font.BOLD, 18));
+		// Inserir o JLabel na Janela
+		add(lblendereco);
+
+		return lblendereco;
+	}
+
+	private JTextField txtendereco(int desq, int dtop, int larg, int alt) {
+		JTextField txtendereco = new JTextField();
+
+		txtNome.setBounds(desq, dtop, larg, alt);
+		// Caixa de texto
+		txtNome.setHorizontalAlignment(JTextField.LEFT);
+		// Inserir o JTextField na janela
+		add(txtNome);
+
+		return txtNome;
 	}
 
 	@Override

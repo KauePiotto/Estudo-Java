@@ -1,23 +1,24 @@
-package aula;
+package exercicio;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class ExCheckBox extends JFrame implements ItemListener {
+import aula.ExCheckBox;
+
+public class ExercioListaSelecaoTime extends JFrame implements ItemListener {
 	JLabel l1;
 	JCheckBox c1, c2;
-	static int negrito = 0, italico = 0;
+	static int Negrito = 0, italico = 0;
 
 	public static void main(String args[]) {
-		new ExCheckBox();
+		new ExercioListaSelecaoTime();
 	}
 
-	//Melhor Tricolor do Brasil
-	ExCheckBox() {
+	ExercioListaSelecaoTime() {
 		setBackground(new Color(180, 180, 180));
-		setTitle("Uso do JCheckBox");
-		setSize(600, 70);
+		setTitle("Time que torce");
+		setSize(780, 70);
 		setLayout(new FlowLayout(FlowLayout.CENTER));
 		l1 = new JLabel(JOptionPane.showInputDialog("Digite um texto"));
 		l1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -41,9 +42,9 @@ public class ExCheckBox extends JFrame implements ItemListener {
 	public void itemStateChanged(ItemEvent e) {
 		if (e.getSource() == c1) {
 			if (e.getStateChange() == ItemEvent.SELECTED)
-				negrito = Font.BOLD;
+				Negrito = Font.BOLD;
 			else
-				negrito = Font.PLAIN;
+				Negrito = Font.PLAIN;
 		}
 		if (e.getSource() == c2) {
 			if (e.getStateChange() == ItemEvent.SELECTED)
@@ -51,6 +52,6 @@ public class ExCheckBox extends JFrame implements ItemListener {
 			else
 				italico = Font.PLAIN;
 		}
-		l1.setFont(new Font("Arial", negrito + italico, 20));
+		l1.setFont(new Font("Arial", Negrito + italico, 20));
 	}
 }
