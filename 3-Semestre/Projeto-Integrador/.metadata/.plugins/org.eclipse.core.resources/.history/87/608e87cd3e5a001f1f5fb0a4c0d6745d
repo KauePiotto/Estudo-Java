@@ -1,0 +1,14 @@
+package aula02;
+
+public class Aluno {
+	String nome, ra;
+	public void gravarNome(String n) {
+		nome = n;
+	}
+	public void gravarRa(String r) {
+		ra = r;
+	}
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,36 @@
+package aula02;
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class Aluno {
+	//Varaivel
+	String nome, ra;
+	short idade;
+	
+	//Métodos de gravação
+	public void gravarNome(String n) {
+		nome = n;
+	}
+	public void gravarRa(String r) {
+		ra = r;
+	}
+	public void gravarIdade(Short id) {
+		idade = id;
+	}
+	
+	//Métodos de leituras
+	public String lerNome() {
+		return nome;
+	}
+	public String lerRa() {
+		return ra;
+	}
+	public short lerIdade() {
+		return idade;
+	}
+	public void imprimir() {
+	JOptionPane.showMessageDialog(null,"Ra: " +lerRa() + "");
+}
+}

@@ -1,0 +1,16 @@
+package aula02;
+
+import java.util.Scanner;
+
+public class Aluno {
+public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	String nome;
+	int ra;
+	System.out.println("Insira seu nome:");
+	nome = scan.findInLine(null);
+	System.out.println("Inseira seu ra:");
+	ra = scan.nextInt();
+	
+}
+}
