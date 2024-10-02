@@ -9,7 +9,8 @@ public class ExJList extends JFrame implements ListSelectionListener, ActionList
 	JLabel l1;
 	JTextField t1;
 	JButton bquant, bindice, bclear;
-	JList lista; // Criando objeto Lista
+	// Criando objeto Lista
+	JList lista;
 	DefaultListModel listModel;
 
 	public static void main(String args[]) {
@@ -22,12 +23,16 @@ public class ExJList extends JFrame implements ListSelectionListener, ActionList
 		l1 = criarRotulo("Sem selecao");
 		t1 = criarTexto();
 
+		// Vetor com o nome das frutas
 		String frutas[] = { "Banana", "Pera", "Maça", "Uva" };
-		listModel = criarListaModelo(frutas); // container com os itens
-		lista = criarLista(listModel); // adicionando o listModel na Lista.
+		// container com os itens
+		listModel = criarListaModelo(frutas);
+		// adicionando o listModel na Lista.
+		lista = criarLista(listModel);
 		// Criando painel do tipo barra de rolagem
 		JScrollPane painel = new JScrollPane(lista);
-		setLayout(new GridLayout(6, 1)); // Criando um Layout do tipo Grid
+		// Criando um Layout do tipo Grid
+		setLayout(new GridLayout(6, 1));
 		add(painel);
 
 		bquant = criarBotao("Quantidade de itens");
@@ -40,10 +45,12 @@ public class ExJList extends JFrame implements ListSelectionListener, ActionList
 	}
 
 	private JList criarLista(DefaultListModel listModel) {
-		JList lista = new JList(listModel); // adicionando o listModel na Lista.
+		// adicionando o listModel na Lista.
+		JList lista = new JList(listModel);
 		lista.setForeground(Color.RED);
 		lista.setFont(new Font("Courier new", Font.BOLD, 18));
-		lista.addListSelectionListener(this); // Adicionando o evento na lista
+		// Adicionando o evento na lista
+		lista.addListSelectionListener(this);
 		return lista;
 	}
 
@@ -82,8 +89,10 @@ public class ExJList extends JFrame implements ListSelectionListener, ActionList
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == t1) {
-			listModel.addElement(t1.getText()); // adiciona itens a lista
-			t1.setText(""); // Limpa a caixa de texto
+			// adiciona itens a lista
+			listModel.addElement(t1.getText());
+			// Limpa a caixa de texto
+			t1.setText("");
 		}
 		if (e.getSource() == bquant)
 			t1.setText("Quantidade: " + listModel.getSize());
