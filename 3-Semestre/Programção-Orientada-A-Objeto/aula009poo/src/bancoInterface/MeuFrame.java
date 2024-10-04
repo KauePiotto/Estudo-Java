@@ -2,6 +2,9 @@ package bancoInterface;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,10 +20,25 @@ public class MeuFrame extends JFrame implements ActionListener {
 		MeuActionListerner listener = new MeuActionListerner();
 		meuBotao.addActionListener(listener);
 		meuBotao.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Cliquei no botão 3º vez");
+			}
+		});
+
+		/*
+		 * Essa função faz a mesma cois que a de cima, Essa função so funciona se a
+		 * classe tiver so um metodo, So funciona do Java 8 para a frente, Pesquisar um
+		 * pouco mais sobre Java lambrida
+		 */
+		meuBotao.addActionListener(e -> {
+			System.out.println("Cliquei no Botão 4º vez");
+		});
+
+		meuBotao.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				meuBotao.setVisible(false);
 			}
 		});
 

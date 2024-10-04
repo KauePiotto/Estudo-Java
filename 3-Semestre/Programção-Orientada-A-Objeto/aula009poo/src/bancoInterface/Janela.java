@@ -42,13 +42,13 @@ public class Janela extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JButton btnNewButton = new JButton("Meu Botao");
-		btnNewButton.setHorizontalAlignment(SwingConstants.RIGHT);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnMeuBotao = new JButton("Meu Botao");
+		btnMeuBotao.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnMeuBotao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		contentPane.add(btnNewButton);
+		contentPane.add(btnMeuBotao);
 	}
 
 }
