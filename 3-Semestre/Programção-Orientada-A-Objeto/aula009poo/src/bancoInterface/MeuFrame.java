@@ -16,6 +16,13 @@ public class MeuFrame extends JFrame implements ActionListener {
 		meuBotao.addActionListener(this);
 		MeuActionListerner listener = new MeuActionListerner();
 		meuBotao.addActionListener(listener);
+		meuBotao.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Cliquei no botão 3º vez");
+			}
+		});
 
 		// Frame
 		getContentPane().setLayout(null);
