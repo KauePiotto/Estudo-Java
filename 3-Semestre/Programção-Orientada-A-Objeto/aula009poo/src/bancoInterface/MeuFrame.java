@@ -1,15 +1,20 @@
 package bancoInterface;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class MeuFrame extends JFrame {
+public class MeuFrame extends JFrame implements ActionListener {
 	JButton meuBotao;
 
 	public MeuFrame() {
-//meuBotao
+		// meuBotao
 		meuBotao = new JButton("Meu Botão");
 		meuBotao.setBounds(20, 20, 80, 20);
+		meuBotao.addActionListener(this);
+		meuBotao.addActionListener(new MeuActionListerner());
 
 		// Frame
 		getContentPane().setLayout(null);
@@ -21,5 +26,17 @@ public class MeuFrame extends JFrame {
 
 	public static void main(String[] args) {
 		new MeuFrame();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.out.println("Cliquei no botão");
+	}
+
+	class MeuActionListerner implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Clique no botão de novo");
+		}
 	}
 }

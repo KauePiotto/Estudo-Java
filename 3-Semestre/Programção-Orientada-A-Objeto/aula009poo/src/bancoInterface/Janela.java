@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class Janela extends JFrame {
 
@@ -42,6 +43,7 @@ public class Janela extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnNewButton = new JButton("Meu Botao");
+		btnNewButton.setHorizontalAlignment(SwingConstants.RIGHT);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
