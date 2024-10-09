@@ -1,7 +1,0 @@
-package aula02;
-
-public class CadastrarAluno {
- public static void main(String[] args) {
-	
-}
-}
