@@ -20,6 +20,10 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\kaue.plfreire\Documents\Estudo-Java\3-Semestre\Projeto-Integrador\aula06"/>
+			<item value="C:\Users\kaue.plfreire\Documents\Estudo-Java\3-Semestre\Projeto-Integrador\aula05"/>
+			<item value="C:\Users\kaue.plfreire\Documents\Estudo-Java\3-Semestre\Projeto-Integrador\aula02"/>
+			<item value="C:\Users\kaue.plfreire\Documents\Estudo-Java\3-Semestre\Projeto-Integrador\aula01"/>
 			<item value="C:\Users\kaue.plfreire\Documents\Estudo-Java\3-Semestre\Projeto-Integrador\aula04"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
