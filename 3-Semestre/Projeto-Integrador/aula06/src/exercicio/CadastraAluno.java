@@ -53,9 +53,7 @@ public class CadastraAluno extends JFrame implements ActionListener {
 		txtNota2.setText("7.777");
 	}
 
-	public static void main(String[] args) {
-		new CadastraAluno();
-	}
+	
 
 	public JLabel criarJLabel(String texto) {
 		JLabel jl = new JLabel(texto);
@@ -115,5 +113,9 @@ public class CadastraAluno extends JFrame implements ActionListener {
 		txtRa.setText("");
 		txtTelefone.setText("");
 		txtTelefone.setText("(11)98989-7878");txtCep.setText("06054-000");txtNota1.setText("7.77");txtNota2.setText("7.777");
+	}
+	
+	public static void main(String[] args) {
+		new CadastraAluno();
 	}
 }
